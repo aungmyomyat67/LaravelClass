@@ -28,8 +28,4 @@ class DatabaseSeeder extends Seeder
             $user->likedPosts()->attach($randomPosts);
         });
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 14c268b1c2e7603858e2a53b556b8d9d6a5f1891
