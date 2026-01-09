@@ -1,4 +1,4 @@
-<h1>Create Book</h1>
+<h1>Create Movie</h1>
 
 <form action="/movies" method="POST">
     @csrf

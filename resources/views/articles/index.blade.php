@@ -6,4 +6,5 @@
 
 @foreach($articles as $a)
     <p>{{ $a->title }}</p>
+    
 @endforeach
