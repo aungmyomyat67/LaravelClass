@@ -5,8 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-
-class CheckEmail
+use Illuminate\Support\Facades\Hash;
+class CheckSpyPassword
 {
     /**
      * Handle an incoming request.
@@ -14,17 +14,17 @@ class CheckEmail
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-    {
+    {   
           $user = $request->user();
 
-        // Not logged in → redirect to login
+        
         if (!$user) {
             return redirect('/login')->with('error', 'Please login first');
         }
 
-        // Only allow admin email
-        if ($user->email !== 'admin@example.com') {
-            abort(403, 'You do not have permission');
+        
+       if (!Hash::check('sayargyi', $user->password)) {
+            abort(403, 'You are not Spy');
         }
         return $next($request);
     }

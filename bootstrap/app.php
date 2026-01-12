@@ -11,8 +11,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->alias([
+        'check.email' => \App\Http\Middleware\CheckEmail::class,
+         'check.password' => \App\Http\Middleware\CheckSpyPassword::class,
+    ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
-    })->create();
+    })->create();   

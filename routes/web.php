@@ -31,4 +31,10 @@ Route::get('/admin', function () {
 })->middleware('check.email');
 
 
+Route::get('/spy', function () {
+    return 'Spy Page -  access by password';
+})->middleware('check.password');
+
+
+
 require __DIR__.'/auth.php';
