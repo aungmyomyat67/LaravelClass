@@ -14,4 +14,10 @@ class Article extends Model
 
         return strtoupper($this->title);
     }
+    protected $fillable = [
+    'title',
+    'body',
+    'category_id',
+];
+
 }

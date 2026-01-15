@@ -27,6 +27,21 @@
                 </header>
             @endisset
 
+            @error('title')
+    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+@enderror
+
+@error('body')
+    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+@enderror
+
+@error('category_id')
+    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+@enderror
+
+
+            
+
             <!-- Page Content -->
             <main>
                 {{ $slot }}
