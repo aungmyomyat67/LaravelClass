@@ -55,4 +55,7 @@ Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])
 
     Route::delete('/articles/{id}', [ArticleController::class, 'destroy']);
 
+
+   
+
 require __DIR__.'/auth.php';
